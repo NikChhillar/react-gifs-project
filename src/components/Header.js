@@ -76,6 +76,9 @@ const HeaderStyled = styled.header`
   @media screen and (max-width: 1300px) {
     padding: 2rem 10rem;
   }
+  @media screen and (max-width: 570px) {
+    padding: 2rem 1rem;
+  }
   .logo {
     display: flex;
     align-items: center;

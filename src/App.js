@@ -76,11 +76,19 @@ const AppStyled = styled.div`
     gap: 4rem;
     margin-top: 4rem;
     margin-bottom: 2rem;
+    @media screen and (max-width: 750px) {
+      gap: 2rem;
+    }
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
   }
 
   main {
     padding: 2rem 8rem;
-    @media screen and (max-width: 1300px){
+    @media screen and (max-width: 1300px) {
       padding: 2rem 4rem;
     }
   }

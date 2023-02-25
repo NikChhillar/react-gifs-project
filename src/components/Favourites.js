@@ -7,37 +7,37 @@ import { useTheme } from "../context/themeContext";
 import Loader from "../components/Loader";
 
 const Favourites = ({ rendered }) => {
-    const { favourites, loading } = useGlobal();
+  const { favourites, loading } = useGlobal();
 
-    // console.log(trending);
+  // console.log(trending);
 
-    const breakpointColumnsObj = {
-        default: 4,
-        1400: 3,
-        977: 2,
-        500: 1,
-    };
+  const breakpointColumnsObj = {
+    default: 4,
+    1400: 3,
+    977: 2,
+    500: 1,
+  };
 
-    const theme = useTheme();
+  const theme = useTheme();
 
-    return (
-        <FavouritesStyled theme={theme}>
-            <h2>
-                <i className="fa-solid fa-heart"></i>
-                Favourites
-            </h2>
-            {loading && <Loader />}
-            <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className="my-masonry-grid"
-                columnClassName="my-masonry-grid_column"
-            >
-                {favourites.map((e) => {
-                    return <GiphyItem key={e.id} rendered={rendered} {...e} giphyItem={e} />;
-                })}
-            </Masonry>
-        </FavouritesStyled>
-    );
+  return (
+    <FavouritesStyled theme={theme}>
+      <h2>
+        <i className="fa-solid fa-heart"></i>
+        Favourites
+      </h2>
+      {loading && <Loader />}
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {favourites.map((e) => {
+          return <GiphyItem key={e.id} rendered={rendered} {...e} giphyItem={e} />;
+        })}
+      </Masonry>
+    </FavouritesStyled>
+  );
 };
 
 const FavouritesStyled = styled.article`
@@ -52,6 +52,9 @@ const FavouritesStyled = styled.article`
     display: flex;
     align-items: center;
     gap: 1rem;
+    @media screen and (max-width: 570px) {
+      font-size: 1rem;
+    }
 
     i {
       background: linear-gradient(

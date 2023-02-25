@@ -53,6 +53,9 @@ const SearchStyled = styled.article`
     display: flex;
     align-items: center;
     gap: 1rem;
+    @media screen and (max-width: 570px) {
+      font-size: 1rem;
+    }
 
     i {
       background: linear-gradient(

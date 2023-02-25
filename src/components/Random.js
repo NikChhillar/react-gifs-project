@@ -21,8 +21,12 @@ const RandomStyled = styled.article`
   padding: 2rem;
   background-color: ${(props) => props.theme.colorBg2};
   border-radius: 1rem;
-  width: 50%;
+  width: 95%;
   margin: 0 auto;
+  @media screen and (max-width: 690px) {
+    padding: 1rem;
+    width: 95%;
+  }
 `;
 
 export default Random;
